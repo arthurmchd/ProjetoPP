@@ -1,2 +1,4 @@
 # ProjetoPP
-*npm i*
+npm i
+
+node server.js
