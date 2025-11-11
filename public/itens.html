@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Produtos – Calculadora de Consumo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="background" aria-hidden="true"></div>
+
+    <header class="container">
+      <nav class="navbar" aria-label="Menu principal">
+        <ul>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./itens.html" class="active">Produtos</a></li>
+          <li><a href="./index.html" class="active">Sustenta</a></li>
+          <li><a href="./favoritos.html">Favoritos</a></li>
+          <li><a href="./conta.html">Sua conta</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="page-header">
+        <h1>Calculadora de Consumo</h1>
+        <p>
+          Estime o consumo de energia dos seus aparelhos e o impacto na sua
+          conta de luz.
+        </p>
+        <div class="total-cost-box">
+          <span>Gasto Mensal Estimado:</span>
+          <strong id="total-cost">R$ 0,00</strong>
+        </div>
+      </section>
+
+      <section id="custom-item-section" class="form-box custom-item-form">
+        <h2>Adicionar Aparelho Personalizado</h2>
+        <form id="custom-item-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="custom-nome">Nome do Aparelho</label>
+              <input
+                type="text"
+                id="custom-nome"
+                placeholder="Ex: Cafeteira"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="custom-potencia">Potência (em Watts)</label>
+              <input
+                type="number"
+                id="custom-potencia"
+                placeholder="Ex: 600"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="custom-horas">Horas de Uso por Dia</label>
+              <input
+                type="number"
+                id="custom-horas"
+                placeholder="Ex: 2"
+                step="0.5"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="custom-imagem">URL da Imagem (Opcional)</label>
+              <input
+                type="url"
+                id="custom-imagem"
+                placeholder="https://.../imagem.png"
+              />
+            </div>
+          </div>
+          <button type="submit">Adicionar Aparelho</button>
+          <p id="custom-item-message" class="mensagem"></p>
+        </form>
+      </section>
+
+      <section id="product-list" class="card-list"></section>
+    </main>
+
+    <script src="./scripts/itens.js" defer></script>
+    <script src="./scripts/auth.js"></script>
+  </body>
+</html>

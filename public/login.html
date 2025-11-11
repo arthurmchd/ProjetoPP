@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login – Seu Projeto</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="background" aria-hidden="true"></div>
+
+    <header class="container">
+      <nav class="navbar" aria-label="Menu principal">
+        <ul>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./itens.html">Produtos</a></li>
+          <li><a href="./index.html" class="active">Sustenta</a></li>
+          <li><a href="./favoritos.html">Favoritos</a></li>
+          <li><a href="./conta.html">Sua conta</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="form-box">
+        <h2>Login</h2>
+
+        <form id="loginForm" novalidate>
+          <label for="nomeLogin">Nome (opcional)</label>
+          <input
+            type="text"
+            id="nomeLogin"
+            name="nome"
+            placeholder="Seu nome"
+          />
+
+          <label for="emailLogin">E‑mail</label>
+
+          <input
+            type="email"
+            id="emailLogin"
+            name="email"
+            required
+            placeholder="exemplo@dominio.com"
+          />
+
+          <label for="senhaLogin">Senha</label>
+
+          <input
+            type="password"
+            id="senhaLogin"
+            name="senha"
+            required
+            placeholder="••••••••"
+          />
+
+          <button type="submit">Entrar</button>
+
+          <p id="mensagemLogin" class="mensagem" aria-live="polite"></p>
+
+          <div class="auth-section">
+            Não tem conta?
+            <a href="./cadastro.html">Cadastrar</a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="./scripts/login.js" defer></script>
+  </body>
+</html>

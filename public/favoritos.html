@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Favoritos – Calculadora de Consumo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="background" aria-hidden="true"></div>
+
+    <header class="container">
+      <nav class="navbar" aria-label="Menu principal">
+        <ul>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./itens.html">Produtos</a></li>
+          <li><a href="./index.html" class="active">Sustenta</a></li>
+          <li><a href="./favoritos.html" class="active">Favoritos</a></li>
+          <li><a href="./conta.html">Sua conta</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="page-header">
+        <h1>Meus Aparelhos Favoritos</h1>
+        <p>Acompanhe o consumo dos seus aparelhos mais utilizados.</p>
+      </section>
+
+      <section id="favorites-list" class="card-list">
+        <p
+          id="no-favorites-message"
+          class="mensagem info-message"
+          style="display: none"
+        >
+          Você ainda não favoritou nenhum item. Clique na estrela ☆ de um
+          aparelho na página de Produtos para adicioná-lo aqui.
+        </p>
+      </section>
+    </main>
+
+    <script src="./scripts/itens.js" defer></script>
+    <script src="./scripts/auth.js"></script>
+  </body>
+</html>

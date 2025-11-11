@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Editar Perfil – Seu Projeto</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="background" aria-hidden="true"></div>
+
+    <header class="container">
+      <nav class="navbar" aria-label="Menu principal">
+        <ul>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./itens.html">Produtos</a></li>
+          <li><a href="./index.html" class="active">Sustenta</a></li>
+          <li><a href="./favoritos.html">Favoritos</a></li>
+          <li><a href="./conta.html" class="active">Sua conta</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="form-box">
+        <h2>Editar Perfil</h2>
+
+        <form id="editForm" novalidate>
+          <label for="nomeEdit">Nome</label>
+          <input type="text" id="nomeEdit" name="nome" placeholder="Seu nome" />
+
+          <label for="emailEdit">E‑mail</label>
+          <input
+            type="email"
+            id="emailEdit"
+            name="email"
+            placeholder="exemplo@dominio.com"
+            required
+          />
+
+          <label for="senhaEdit"
+            >Nova senha (deixe em branco para não alterar)</label
+          >
+          <input
+            type="password"
+            id="senhaEdit"
+            name="senha"
+            placeholder="••••••••"
+          />
+
+          <div
+            class="buttons"
+            style="display: flex; gap: 0.6rem; margin-top: 1.4rem"
+          >
+            <button
+              type="submit"
+              class="btn-primary"
+              style="flex: 1; background: #0095f6"
+            >
+              Salvar
+            </button>
+            <button
+              type="button"
+              id="cancelBtn"
+              class="btn-cancel"
+              style="
+                flex: 1;
+                background: transparent;
+                border: 1px solid #555;
+                color: #333;
+              "
+            >
+              Cancelar
+            </button>
+          </div>
+
+          <p id="mensagemEdit" class="mensagem" aria-live="polite"></p>
+        </form>
+
+        <div
+          style="
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e0e0e0;
+          "
+        >
+          <button
+            id="logoutBtn"
+            class="btn-logout"
+            style="
+              width: 100%;
+              padding: 0.9rem;
+              background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+              color: #fff;
+              border: none;
+              border-radius: 0.5rem;
+              font-weight: 600;
+              font-size: 1rem;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+            "
+            onmouseover="this.style.background='linear-gradient(135deg, #c0392b 0%, #a93226 100%)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(231, 76, 60, 0.4)';"
+            onmouseout="this.style.background='linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(231, 76, 60, 0.3)';"
+          >
+            Sair da Conta
+          </button>
+          <p
+            style="
+              text-align: center;
+              margin-top: 0.8rem;
+              font-size: 0.85rem;
+              color: #666;
+            "
+          >
+            Ao sair, você precisará fazer login novamente para acessar sua
+            conta.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./scripts/editar.js" defer></script>
+  </body>
+</html>
