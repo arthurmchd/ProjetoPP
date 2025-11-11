@@ -1,4 +1,4 @@
-const PUBLIC_PAGES = ["./login.html", "./cadastro.html"];
+const PUBLIC_PAGES = ["/login.html", "/cadastro.html"];
 function parseJwt(token) {
   try {
     const base64Url = token.split(".")[1];
@@ -32,16 +32,13 @@ function isTokenValid(token) {
 
   if (!token || !isTokenValid(token)) {
     localStorage.removeItem("token");
-    window.location.href = "./login.html";
+    window.location.href = "/public/login.html";
     return;
   }
 
   const payload = parseJwt(token);
   const nameEl = document.getElementById("user-name");
-  const avatarEl = document.getElementById("user-avatar");
   const userInfoEl = document.getElementById("user-info");
   if (nameEl) nameEl.textContent = payload.nome || "Usuário";
-  if (avatarEl)
-    avatarEl.src = payload.avatar || "./assets/img/default-avatar.png";
   if (userInfoEl) userInfoEl.style.display = "flex";
 })();
