@@ -1,1 +1,2 @@
 # ProjetoPP
+*npm i*
