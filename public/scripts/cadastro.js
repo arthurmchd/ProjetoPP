@@ -14,7 +14,7 @@ document
       const resposta = await fetch("http://localhost:3001/cadastro", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, senha, nome, avatar: avatar || null }),
+        body: JSON.stringify({ email, senha, nome }),
       });
       const resultado = await resposta.json();
       if (resposta.ok) {

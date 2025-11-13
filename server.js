@@ -32,13 +32,13 @@ function gerarToken(payload) {
 }
 
 app.post("/cadastro", (req, res) => {
-  const { email, senha, nome, avatar } = req.body;
+  const { email, senha, nome } = req.body;
   if (!email || !senha || !nome) {
     return res.status(400).json({ mensagem: "Preencha e‑mail, senha e nome." });
   }
   const sql =
-    "INSERT INTO usuarios (email, senha, nome, avatar) VALUES (?, ?, ?, ?)";
-  db.query(sql, [email, senha, nome, avatar || null], (err) => {
+    "INSERT INTO usuarios (email, senha, nome) VALUES (?, ?, ?)";
+  db.query(sql, [email, senha, nome || null], (err) => {
     if (err) {
       console.error("Erro ao cadastrar:", err);
       return res.status(500).json({ mensagem: "Erro ao cadastrar usuário." });
@@ -53,7 +53,7 @@ app.post("/login", (req, res) => {
     return res.status(400).json({ mensagem: "Preencha e‑mail e senha." });
   }
   const sql =
-    "SELECT id, email, nome, avatar FROM usuarios WHERE email = ? AND senha = ?";
+    "SELECT id, email, nome FROM usuarios WHERE email = ? AND senha = ?";
   db.query(sql, [email, senha], (err, resultados) => {
     if (err) {
       console.error("Erro ao logar:", err);
@@ -67,7 +67,6 @@ app.post("/login", (req, res) => {
       id: usuario.id,
       email: usuario.email,
       nome: usuario.nome,
-      avatar: usuario.avatar,
     });
     res.status(200).json({
       mensagem: "Login bem‑sucedido!",
@@ -75,14 +74,13 @@ app.post("/login", (req, res) => {
       usuario: {
         email: usuario.email,
         nome: usuario.nome,
-        avatar: usuario.avatar,
       },
     });
   });
 });
 
 app.put("/editar", (req, res) => {
-  const { emailOriginal, email, senha, nome, avatar } = req.body;
+  const { emailOriginal, email, senha, nome } = req.body;
 
   if (!emailOriginal) {
     return res
@@ -127,10 +125,7 @@ app.put("/editar", (req, res) => {
       campos.push("nome = ?");
       valores.push(nome);
     }
-    if (avatar !== undefined) {
-      campos.push("avatar = ?");
-      valores.push(avatar);
-    }
+
     if (campos.length === 0) {
       return res.status(400).json({ mensagem: "Nenhum campo para atualizar." });
     }
